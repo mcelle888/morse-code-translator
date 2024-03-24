@@ -5,10 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morse Code Translator</title>
     <link rel="icon" href="./assets/tab-icon.png">
-    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./css/style.css">
     <script type="module" src="./script.js" defer ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <main>
+    <h1>Morse Code Translator</h1>
+        <section class="translator-container">
+            <article class="text-to-morse">
+                <div class="type-container">
+                    <p>Text to Morse Code</p>
+                    <textarea class="textInput" name="textInput" id="textInput" cols="100" rows="10" placeholder="Enter text"></textarea>
+                    <button>Translate</button>
+                </div>
+
+                <div class="morse-translated-container">
+                    <p>Translation:</p>
+                    <div class="morse-translated-box">
+
+                    </div>
+                </div>
+            </article>
+
+            <article class="morse-to-text">
+                <div class="type-container">
+                    <p>Morse Code to Text</p>
+                    <textarea class="morseInput" name="morseInput" id="morseInput" cols="100" rows="10" placeholder="Enter Morse Code"></textarea>
+                    <button>Translate</button>
+                </div>
+                <div class="text-translated-container">
+                    <p>Translation:</p>
+                    <div class="text-translated-box">
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

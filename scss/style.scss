@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// #987D7C
+// #776D5A
+
+// #A09CB0 
+// #A3B9C9
+// #EFF0D1
+
+body {
+    background-color:#ebe0c8;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    font-family: "Kode Mono", monospace;
+}
+
+section {
+    margin: 2rem;
+}
+
+.type-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.morse-translated-box, .text-translated-box {
+    height: 5rem;
+    width: 50rem;
+    border: 2px solid black;
+}
+
+button {
+  width: 4rem;
+  align-self: center;
+}
