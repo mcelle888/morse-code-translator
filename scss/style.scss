@@ -54,6 +54,7 @@ h1 {
 
 textarea {
     @include m.default-border;
+    outline-color: v.$main-blue;
 }
 
 .morse-translated-box, .text-translated-box {

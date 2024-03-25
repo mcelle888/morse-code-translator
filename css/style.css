@@ -54,6 +54,7 @@ h1 {
 textarea {
   border-radius: 4px;
   border: 2px solid white;
+  outline-color: rgb(163, 185, 201);
 }
 
 .morse-translated-box, .text-translated-box {
