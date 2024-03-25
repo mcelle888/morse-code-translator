@@ -1,17 +1,15 @@
+@use './partials/mixins.scss' as m;
+@use './partials/variables.scss' as v;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-// #987D7C
-// #776D5A
 
-// #A09CB0 
-// #A3B9C9
-// #EFF0D1
 
 body {
-    background-color:#ebe0c8;
+    background-color:v.$main-cream;
 }
 
 main {
@@ -27,20 +25,56 @@ section {
     margin: 2rem;
 }
 
+h1 {
+    background-color: v.$main-blue;
+    padding: 2rem; 
+    color: white;
+    @include m.default-border; 
+}
+
 .type-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+.text-to-morse {
+    background-color: v.$main-rose; 
+    padding: 2rem; 
+    margin: 2rem;
+    @include m.default-border;
+}
+
+.morse-to-text {
+    background-color: v.$main-purple;
+    padding: 2rem;
+    margin: 2rem;
+    @include m.default-border;
+}
+
+textarea {
+    @include m.default-border;
+}
 
 .morse-translated-box, .text-translated-box {
     height: 5rem;
     width: 50rem;
-    border: 2px solid black;
+    background-color: white;
+    @include m.default-border;
+    
 }
 
 button {
-  width: 4rem;
+  width: 8rem;
   align-self: center;
+  background-color: v.$main-blue;
+  padding: 1rem;
+  font-family: "Kode Mono", monospace;
+  border-radius: 4px;
+  border-color: white;
+}
+
+button:hover {
+    box-shadow: 2px solid black;
+    filter: drop-shadow(0 0 0.2rem rgba(229, 229, 230, 0.8));
 }
