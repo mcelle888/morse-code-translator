@@ -52,20 +52,27 @@ const morseCode = {
     "@": ".--.-."
 }
 
+// translate text to morse function
 
-// text-morse-code function
 
 function textToMorse(text) {
     // removes line breaks
     text = text.replace(/\n/g, '')
     // convert to uppercase 
-    return text.toUpperCase()
+    text = text.toUpperCase();
+    // filter invalid characters and throw error if found
+    const invalidChars = text.split('').filter(i => !(i in morseCode));
+    if (invalidChars.length > 0) {
+        throw new Error(`Sorry! untranslatable characters found: [${invalidChars.join(', ')}]. Please remove and try again`);
+    }
+    
     // split each letter into an array
-    .split('')
-    // map to convert each letter 'i' to the translated code OR return i
-    .map(i => morseCode[i] || i)
-    // join new array to morse using space to put spaces between each letter
-    .join(' ')
+    return text
+        .split('')
+        // map to convert each letter 'i' to the translated code OR return i
+        .map(i => morseCode[i] || i)
+        // join new array to morse using space to put spaces between each letter
+        .join(' ');
 }
 
 // morse-text-code function
@@ -99,31 +106,31 @@ const morseTranslatedBox = document.querySelector(".morse-translated-box")
 let errorBlock = ''
 
 textMorseButton.addEventListener('click', () => {
-    textTranslatedBox.innerHTML = ''
-    const translatedMorse = textToMorse(textInput.value)
-    textTranslatedBox.innerHTML = translatedMorse
-
-    // check for untranslated characters: split the translation and filter to find values that are not in morseCode
-    const invalidTranslation = translatedMorse.split(' ').filter(code => !Object.values(morseCode).includes(code))
-
-    if (invalidTranslation.length > 0) {
-        // remove existing error block if it exists
+    textTranslatedBox.innerHTML = '';
+    try {
+        const translatedMorse = textToMorse(textInput.value);
+        textTranslatedBox.innerHTML = translatedMorse;
+        
+        // remove existing error block
         if (errorBlock) {
-            errorBlock.remove()
+            errorBlock.remove();
         }
+    } catch (error) {
+        if (errorBlock) {
+            errorBlock.remove();
+        } 
+        // create error block with error message
+        errorBlock = document.createElement('div');
+        errorBlock.classList.add('error-container');
 
-        // error message if invalid characters are found
-        const errorMessage = `Sorry! Invalid characters were found: [${invalidTranslation}] and have not been translated`
-        errorBlock = document.createElement('div')
-        errorBlock.classList.add('error-container')
+        const errorMessageElement = document.createElement('p');
+        errorMessageElement.textContent = error.message;
 
-        const errorMessageElement = document.createElement('p')
-        errorMessageElement.textContent = errorMessage
-        errorBlock.appendChild(errorMessageElement)
+        errorBlock.appendChild(errorMessageElement);
         // append the error block to the .text-to-morse container
-        document.querySelector('.text-to-morse').appendChild(errorBlock)
-    } 
-})
+        document.querySelector('.text-to-morse').appendChild(errorBlock);
+    }
+});
 
 
 
