@@ -1,4 +1,4 @@
-import { createErrorBlock } from "./dom-utils.js"
+import { populateErrorBlock } from "./dom-utils.js"
 import { morseToText, textToMorse } from "./translation-function.js"
  
 const textMorseButton = document.querySelector("#textButton")
@@ -15,9 +15,9 @@ textMorseButton.addEventListener('click', () => {
     textTranslatedBox.innerHTML = ''
 
     //remove exisiting error messages 
-    const oldErrorContainer = document.querySelector('.text-to-morse .error-container')
-    if (oldErrorContainer) {
-        oldErrorContainer.remove()
+    const errorContainer = document.querySelector('.text-error-container')
+    if (errorContainer) {
+        errorContainer.innerHTML = ''
     }
     // add translated text 
     try {
@@ -25,7 +25,7 @@ textMorseButton.addEventListener('click', () => {
         textTranslatedBox.innerHTML = translatedMorse
     } catch (error) {
         // else if error, create error block
-        const errorBlock = createErrorBlock(error.message)
+        const errorBlock = populateErrorBlock(error.message, '.text-error-container')
         document.querySelector('.text-to-morse').appendChild(errorBlock)
     }
 })
@@ -36,9 +36,9 @@ morseButton.addEventListener('click', () => {
     morseTranslatedBox.innerHTML = ''
 
     // remove exisiting error messages 
-    const errorContainer = document.querySelector('.morse-to-text .error-container')
+    const errorContainer = document.querySelector('.morse-error-container')
     if (errorContainer) {
-        errorContainer.remove()
+        errorContainer.innerHTML = ''
     }
     // add translated text
     try {
@@ -46,7 +46,7 @@ morseButton.addEventListener('click', () => {
         morseTranslatedBox.innerHTML = translatedText
     } catch (error) {
         // else if error, create error block
-        const errorBlock = createErrorBlock(error.message)
+        const errorBlock = populateErrorBlock(error.message, '.morse-error-container')
         document.querySelector('.morse-to-text').appendChild(errorBlock)
     }
 })

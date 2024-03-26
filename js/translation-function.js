@@ -62,7 +62,7 @@ export function textToMorse(text) {
     // filter invalid characters and throw error if found
     const invalidChars = text.split('').filter(i => !(i in morseCode))
     if (invalidChars.length > 0) {
-        throw new Error(`Sorry! untranslatable characters found: [${invalidChars.join(', ')}]. Please remove and try again`)
+        throw new Error(`Sorry! Untranslatable characters found: [${invalidChars.join(', ')}]. Please remove and try again`)
     }
     
     // split each letter into an array
@@ -84,7 +84,7 @@ export function morseToText(morse) {
     // check for invalid characters
     const invalidChars = morse.split('').filter(char => !/[.\-\/ ]/.test(char))
     if (invalidChars.length > 0) {
-        throw new Error(`Invalid Morse code characters found: [${invalidChars.join(', ')}]. Please use only ".", "-", "/", or space.`)
+        throw new Error(`Invalid Morse code characters found: [${invalidChars.join(', ')}]. Please use only "." and "-" with "/" for spaces`)
     }
 
     // split morse code by spaces to get individual codes
