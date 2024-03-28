@@ -41,7 +41,6 @@ header > p {
     align-self: center;
     font-size: 1.4vw;
     padding: 0.1rem;
-
     @include queries.desktop {
         display: flex;
     }
