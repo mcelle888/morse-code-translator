@@ -92,9 +92,16 @@ export function morseToText(morse) {
     // split morse code by spaces to get individual codes
     const morseCodes = morse.split(' ')
 
+    // check for invalid Morse code patterns
+    const invalidPattern = morseCodes.filter(code => !Object.values(morseCode).includes(code))
+
+    if (invalidPattern.length > 0) {
+        throw new Error(`Sorry! Unrecognised code patterns found: [${invalidPattern.join(', ')}]. Please remove and try again`)
+    }
+
     // translate each Morse code to text
     const translatedText = morseCodes.map(code => {
-        // check morse is in the morseCode to translate
+        // check if Morse code exists in the morseCode object to translate
         const text = Object.entries(morseCode).find(([key, value]) => value === code)
         // return the letter or empty string if not found
         return text ? text[0] : '' 
@@ -102,4 +109,3 @@ export function morseToText(morse) {
 
     return translatedText
 }
-
