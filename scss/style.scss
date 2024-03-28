@@ -25,15 +25,39 @@ main {
 }
 
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.4rem;
+    width: 100vw;
+}
+
+header > p {
+    display: none;
+    color: white;
+    font-weight: 800;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.4vw;
+    padding: 0.1rem;
+
+    @include queries.desktop {
+        display: flex;
+    }
+    @include queries.large-desktop {
+        display: flex;
+    }
+}
+
 
 h1 {
     display: flex;
-    background-color: v.$main-blue;
     padding: 2rem; 
-    color: black;
+    color: white;
     text-align: center;
     font-weight: 100;
-    @include m.default-border; 
+    font-size: 2.25vw;
 }
 
 
@@ -45,6 +69,7 @@ h1 {
 
 .type-container > p {
     font-weight: 800;
+    color:v.$font-white;
 }
 
 .translator-container {
@@ -52,6 +77,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
     @include queries.desktop {
         flex-direction: row;
     }
@@ -59,7 +85,6 @@ h1 {
         flex-direction: row;
     }
 }
-
 
 .text-to-morse {
     background-color: v.$main-rose; 
@@ -97,21 +122,33 @@ h1 {
 .translated-title {
     margin: 1rem;
     font-weight: 800;
+    color:v.$font-white;
 }
 
 textarea {
     @include m.default-border;
     outline-color: v.$main-blue;
+    font-size: 1rem;
+    padding: 0.8rem;
 }
 
 .morse-translated-box, .text-translated-box {
     height: 20vh;
     background-color: white;
+    padding: 0.8rem;
     @include m.default-border;
     text-wrap: wrap;
     overflow: scroll;
-    
+    // hide scollbars for firefox and IE10
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
+
+// hide scrollbars fo safari and chrome
+.morse-translated-box::-webkit-scrollbar, .text-translated-box:-webkit-scrollbar {
+    display: none;
+}
+
 
 button {
   width: 8rem;
@@ -134,4 +171,13 @@ button:hover {
     padding: 1rem;
     margin: 0.5rem;
     height: 10vh;
+}
+
+footer {
+    display: flex;
+    color: white;
+    font-size: 1.9vw;
+    width: 100vw;
+    justify-content: center;
+    padding: 1rem 0;
 }
