@@ -10,7 +10,7 @@
 
 
 body {
-    background-color:v.$main-cream;
+    background-image: url(/assets/mbackground.webp) ;
     width: 100vw;
     height: 100vh;
 }
@@ -57,6 +57,8 @@ h1 {
     text-align: center;
     font-weight: 100;
     font-size: 2.25vw;
+    background-color: v.$main-pink;
+    @include m.default-border;
 }
 
 
@@ -68,7 +70,7 @@ h1 {
 
 .type-container > p {
     font-weight: 800;
-    color:v.$font-white;
+    color:white;
 }
 
 .translator-container {
@@ -86,7 +88,7 @@ h1 {
 }
 
 .text-to-morse {
-    background-color: v.$main-rose; 
+    background-color: v.$main-light-green; 
     padding: 2rem; 
     margin: 2rem;
     width: 85vw;
@@ -103,7 +105,7 @@ h1 {
 }
 
 .morse-to-text {
-    background-color: v.$main-purple;
+    background-color: v.$main-green;
     padding: 2rem;
     margin: 2rem;
     width: 85vw;
@@ -121,7 +123,7 @@ h1 {
 .translated-title {
     margin: 1rem;
     font-weight: 800;
-    color:v.$font-white;
+    color:white;
 }
 
 textarea {
@@ -152,7 +154,7 @@ textarea {
 button {
   width: 8rem;
   align-self: center;
-  background-color: v.$main-blue;
+  background-color: v.$main-pink;
   padding: 1rem;
   font-family: "Kode Mono", monospace;
   border-radius: 4px;
@@ -166,7 +168,7 @@ button:hover {
 
 
 .text-error-container, .morse-error-container {
-    color: rgb(255, 255, 255);
+    color: black;
     padding: 1rem;
     margin: 0.5rem;
     height: 10vh;
@@ -175,7 +177,7 @@ button:hover {
 footer {
     display: flex;
     color: white;
-    font-size: 1.9vw;
+    font-size: 1.5vw;
     width: 100vw;
     justify-content: center;
     padding: 1rem 0;

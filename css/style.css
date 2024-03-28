@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(224, 207, 180);
+  background-image: url(/assets/mbackground.webp);
   width: 100vw;
   height: 100vh;
 }
@@ -54,6 +54,9 @@ h1 {
   text-align: center;
   font-weight: 100;
   font-size: 2.25vw;
+  background-color: rgb(227, 203, 197);
+  border-radius: 1.2rem;
+  border: 2px solid white;
 }
 
 .type-container {
@@ -64,7 +67,7 @@ h1 {
 
 .type-container > p {
   font-weight: 800;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 .translator-container {
@@ -85,7 +88,7 @@ h1 {
 }
 
 .text-to-morse {
-  background-color: rgba(187, 137, 135, 0.8);
+  background-color: rgba(188, 206, 193, 0.9);
   padding: 2rem;
   margin: 2rem;
   width: 85vw;
@@ -106,7 +109,7 @@ h1 {
 }
 
 .morse-to-text {
-  background-color: rgba(160, 156, 176, 0.8);
+  background-color: rgba(152, 192, 187, 0.8);
   padding: 2rem;
   margin: 2rem;
   width: 85vw;
@@ -129,7 +132,7 @@ h1 {
 .translated-title {
   margin: 1rem;
   font-weight: 800;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 textarea {
@@ -159,7 +162,7 @@ textarea {
 button {
   width: 8rem;
   align-self: center;
-  background-color: rgb(163, 185, 201);
+  background-color: rgb(227, 203, 197);
   padding: 1rem;
   font-family: "Kode Mono", monospace;
   border-radius: 4px;
@@ -172,7 +175,7 @@ button:hover {
 }
 
 .text-error-container, .morse-error-container {
-  color: rgb(255, 255, 255);
+  color: black;
   padding: 1rem;
   margin: 0.5rem;
   height: 10vh;
@@ -181,7 +184,7 @@ button:hover {
 footer {
   display: flex;
   color: white;
-  font-size: 1.9vw;
+  font-size: 1.5vw;
   width: 100vw;
   justify-content: center;
   padding: 1rem 0;
