@@ -2,7 +2,7 @@
 A simple morse code translator web application that takes user input and translates between text and morse-code. A project to practice implementing HTML, SCSS, JavaScript and unit testing frameworks (Jest).
 
 ![screenshot of site](./assets/morsescreen.png)
-Deployed Link : [Morse Code Translator](https://morse-code-translator-orcin.vercel.app/)
+Deployed Link : [Morse Code Translator](https://morse-code-translator-five.vercel.app/)
 
 ## Key Features
 - Responsive HTML and SCSS design.
